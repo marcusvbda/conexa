@@ -1136,7 +1136,7 @@ p {
     border-bottom: 1px solid var(--text-color);
 }
 
-#footer {
+.footer {
     background: var(--text-color, #0A0A32);
     padding: 150px 160px 144px;
     color: var(--white, #FFFFFA);
@@ -1145,7 +1145,7 @@ p {
     position: relative;
 }
 
-#footer .col {
+.footer .col {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1156,7 +1156,7 @@ p {
     margin-top: auto;
 }
 
-#footer .col .logo {
+.footer .col .logo {
     width: 243px;
     height: 71px;
     position: relative;
@@ -1164,7 +1164,7 @@ p {
 }
 
 
-#footer .col a,
+.footer .col a,
 span {
     color: var(--white, #FFFFFA);
     font-family: "Nexa", sans-serif;
@@ -1179,13 +1179,13 @@ span {
     justify-content: center;
 }
 
-#footer .social-row {
+.footer .social-row {
     display: flex;
     gap: 24px;
 }
 
 @media (max-width: 900px) {
-    #footer {
+    .footer {
         flex-direction: column;
         padding: 40px 45px;
     }
@@ -1250,5 +1250,13 @@ span {
 }
 
 #hostinger-preview-banner {
+    display: none !important;
+}
+
+#footer {
+    display: none !important;
+}
+
+hr {
     display: none !important;
 }
