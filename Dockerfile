@@ -26,6 +26,8 @@ RUN docker-php-ext-configure gd --with-jpeg \
   pcntl \
   mysqli
 
+RUN docker-php-ext-install mysqli && a2enmod rewrite
+
 COPY . /var/www/html
 
 RUN chmod -R 777 /var/www/html
