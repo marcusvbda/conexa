@@ -12,6 +12,7 @@ RUN apt-get update \
   libexif-dev \
   libcurl4-openssl-dev \
   libssl-dev \
+  && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd --with-jpeg \
@@ -26,10 +27,15 @@ RUN docker-php-ext-configure gd --with-jpeg \
   pcntl \
   mysqli
 
-RUN docker-php-ext-install mysqli && a2enmod rewrite
+COPY init.sh /usr/local/bin/init.sh
+RUN chmod +x /usr/local/bin/init.sh
 
 COPY . /var/www/html
 
-RUN chmod -R 777 /var/www/html
+RUN a2enmod rewrite
+
+RUN service apache2 restart
 
 EXPOSE 80
+
+CMD ["/usr/local/bin/init.sh"]
