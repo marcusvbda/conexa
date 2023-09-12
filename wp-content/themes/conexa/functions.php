@@ -34,3 +34,19 @@ function customize_acf_wysiwyg_toolbar($toolbars)
     return $toolbars;
 }
 add_filter('acf/fields/wysiwyg/toolbars', 'customize_acf_wysiwyg_toolbar');
+
+
+function api_purchase($data)
+{
+    return "return here";
+}
+
+function register_api_purchase()
+{
+    register_rest_route('api', '/purchase', array(
+        'methods' => 'GET',
+        'callback' => 'api_purchase',
+    ));
+}
+
+add_action('rest_api_init', 'register_api_purchase');
