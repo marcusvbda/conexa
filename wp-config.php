@@ -1,5 +1,5 @@
 <?php
-define( 'WP_CACHE', true );
+define('WP_CACHE', true);
 
 /**
  * As configurações básicas do WordPress
@@ -22,16 +22,16 @@ define( 'WP_CACHE', true );
 
 // ** Configurações do banco de dados - Você pode pegar estas informações com o serviço de hospedagem ** //
 /** O nome do banco de dados do WordPress */
-define('DB_NAME', "wordpress_db");
 
-/** Usuário do banco de dados MySQL */
-define('DB_USER', "root");
+define('DB_NAME', getenv('DB_NAME'));
+define('DB_USER', getenv('DB_USER'));
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
+define('DB_HOST', getenv('DB_HOST'));
+define('WP_HOME', getenv('WP_HOME'));
+define('WP_SITEURL', getenv('WP_SITEURL'));
 
-/** Senha do banco de dados MySQL */
-define('DB_PASSWORD', "");
 
-/** Nome do host do MySQL */
-define('DB_HOST', "db");
+
 
 /** Charset do banco de dados a ser usado na criação das tabelas. */
 define('DB_CHARSET', 'utf8mb4');
@@ -98,5 +98,4 @@ if (!defined('ABSPATH')) {
 }
 
 /** Configura as variáveis e arquivos do WordPress. */
-define( 'WP_SITEURL', 'http://localhost:8080/' );
 require_once ABSPATH . 'wp-settings.php';
