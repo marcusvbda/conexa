@@ -89,25 +89,6 @@
                 "maxlength": ""
             },
             {
-                "key": "field_65006fc4fb9f1",
-                "label": "Nome",
-                "name": "name",
-                "type": "text",
-                "instructions": "",
-                "required": 1,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "Checkout Conexa",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
-            },
-            {
                 "key": "field_650070993d889",
                 "label": "Descrição",
                 "name": "description",
@@ -140,6 +121,25 @@
                     "id": ""
                 },
                 "default_value": "Nome do checkout",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6500c61464e66",
+                "label": "Título da página",
+                "name": "title",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Checkout Conexa",
                 "placeholder": "",
                 "prepend": "",
                 "append": "",
