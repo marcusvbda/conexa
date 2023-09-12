@@ -1,28 +1,25 @@
+const initialState = () => ({
+    checkoutFields : checkoutFields,
+    personalInfo : {
+        name  : 'Solaire of Astora',
+        docNumber : '111.111.111-11',
+        email : 'email@email.com'
+    },
+    paymentInfo : {
+        method : checkoutFields.payment_methods[0],
+        creditcard : {
+            name: 'SOLAIRE OF ASTORA',
+            number : '4242 4242 424242 42424',
+            dueDate : '01/2024',
+            cvv : '123',
+        }
+    },
+    isSubmiting:false,
+})
+
 window.checkout = createApp("#checkout", {
     data() {
-        return {
-            checkoutFields : checkoutFields,
-            personalInfo : {
-                name  : 'Solaire of Astora',
-                docNumber : '111.111.111-11',
-                email : 'email@email.com'
-            },
-            paymentInfo : {
-                method : checkoutFields.payment_methods[0],
-                creditcard : {
-                    name: 'SOLAIRE OF ASTORA',
-                    number : '4242 4242 424242 42424',
-                    dueDate : '01/2024',
-                    cvv : '123',
-                }
-            },
-            isSubmiting:false,
-            provider : {
-                url : 'https://api.pagar.me',
-                userName: 'mvbassalobre',
-                password : 'passcode'
-            }
-        }
+        return initialState();
     },
     computed : {
         formatedPrice() {
@@ -48,7 +45,6 @@ window.checkout = createApp("#checkout", {
             let valueIndex = 0;
             for (let i = 0; i < mask.length; i++) {
                 if (mask.charAt(i) === "#") {
-                    
                     if (valueIndex < value.length) {
                         formattedValue += value.charAt(valueIndex);
                         valueIndex++;
@@ -91,11 +87,10 @@ window.checkout = createApp("#checkout", {
         validCreditCard() {
             let validMessage = 'Cartão de crédito inválido';
             const creditcard = this.paymentInfo.creditcard;
-            if(creditcard.number.length<22) {
+            if(creditcard.number.length<19) {
                 this.error(validMessage);
                 throw new Error(validMessage);
             }
-
             validMessage = 'Vencimento inválido';
             const dueDate = creditcard.dueDate;
             const dueDateRegex = /^\d{2}\/\d{4}$/;
@@ -103,7 +98,6 @@ window.checkout = createApp("#checkout", {
                 this.error(validMessage);
                 throw new Error(validMessage);
             }
-
             validMessage = 'cvv inválido';
             const cvv = creditcard.cvv;
             const cvvRegex = /^\d{3,4}$/;
@@ -111,7 +105,6 @@ window.checkout = createApp("#checkout", {
                 this.error(validMessage);
                 throw new Error(validMessage);
             }
-
             validMessage = 'Nome do cartão inválido';
             const name = creditcard.name;
             const nameRegex = /^[a-z\s]+$/i;
@@ -137,9 +130,9 @@ window.checkout = createApp("#checkout", {
         error(text) {
             Swal.fire({
                 title: 'Atenção!',
-                text: text,
+                html: text,
                 icon: 'warning',
-              })
+            })
         },
         confirm(text,callback) {
             Swal.fire({
@@ -173,18 +166,11 @@ window.checkout = createApp("#checkout", {
             return options[this.checkoutFields.type] || 1;
         },
         getUrl() {
-            const url = this.provider.url;
             const options = {
-                "Recorrente": 'core/v5/subscriptions',
+                "Recorrente": '/wp-json/api/subscription',
             }
             const endpoint = options[this.checkoutFields.type]
-            return `${url}/${endpoint}`;
-        },
-        getAuthorization() {
-            const userName = this.provider.userName;
-            const password = this.provider.password;
-            const auth = `${userName}:${password}`;
-            return `Basic ${btoa(auth)}`;
+            return `${endpoint}`;
         },
         makePaymentPayload() {
             let body = {
@@ -228,22 +214,41 @@ window.checkout = createApp("#checkout", {
                 headers: {
                     accept: 'application/json', 
                     'content-type': 'application/json',
-                    authorization: this.getAuthorization()
                 },
                 body: JSON.stringify(body)
             }
             return payload;
         },
+        success(text) {
+            Swal.fire({
+                title: 'Sucesso!',
+                html: text,
+                icon: 'success',
+            })
+        },
+        resetState(){
+            Object.assign(this.$data, initialState());
+        },
         submit() {
+            this.validInfos();
             this.confirm('Finalizar pagamento ?',() => {
-                this.validInfos();
                 this.isSubmiting = true;
                 const payload = this.makePaymentPayload();
-
                   fetch(this.getUrl(), payload)
                     .then(response => response.json())
-                    .then(response => console.log(response))
-                    .catch(err => console.error(err));
+                    .then(response => {
+                        if(response.status === 'success') {
+                            this.success("Pagamento realizado com sucesso");
+                            this.resetState();
+                        } else if(response.message) {
+                            this.error(response.message);
+                        }
+                        this.isSubmiting = false;
+                    })
+                    .catch(err => {
+                        this.error(err.message);
+                        this.isSubmiting = false;
+                    });
             })
         }
     }
