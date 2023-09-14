@@ -31,86 +31,23 @@
                     </a>
                 </li>
                 <li>
-                    <div :class="`navbar-item ${navbarItemClass('para-sua-empresa')} dropdown`" id="para-sua-empresa" href="#">
+                    <a :class="`navbar-item`" href="<?php the_field('footer_for_you_company_url') ?>">
                         Para sua empresa
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" class="dropdown-icon">
-                            <path d="M0.231232 0.23964C0.53954 -0.07988 1.03941 -0.07988 1.34772 0.23964L5 4.02473L8.65228 0.23964C8.96059 -0.07988 9.46046 -0.07988 9.76877 0.23964C10.0771 0.55916 10.0771 1.0772 9.76877 1.39672L5.55824 5.76036C5.24993 6.07988 4.75007 6.07988 4.44176 5.76036L0.231232 1.39672C-0.0770772 1.0772 -0.0770772 0.55916 0.231232 0.23964Z" />
-                        </svg>
-                        <div class="dropdown-content">
-                            <div class="navbar-content">
-                                <div class="navbar-content-col">
-                                    <b>Titulo</b>
-                                    <a href="#">Item 1</a>
-                                    <a href="#">Item 2</a>
-                                    <a href="#">Item 3</a>
-                                    <a href="#">Item 4</a>
-                                </div>
-                                <div class="navbar-content-col">
-                                    <b>Titulo</b>
-                                    <a href="#">Item 1</a>
-                                    <a href="#">Item 2</a>
-                                    <a href="#">Item 3</a>
-                                    <a href="#">Item 4</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </li>
                 <li>
-                    <div :class="`navbar-item ${navbarItemClass('para-sua-operadora')} dropdown`" href="#">
+                    <a :class="`navbar-item`" href="<?php the_field('footer_for_your_operator_url') ?>">
                         Para sua operadora
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" class="dropdown-icon">
-                            <path d="M0.231232 0.23964C0.53954 -0.07988 1.03941 -0.07988 1.34772 0.23964L5 4.02473L8.65228 0.23964C8.96059 -0.07988 9.46046 -0.07988 9.76877 0.23964C10.0771 0.55916 10.0771 1.0772 9.76877 1.39672L5.55824 5.76036C5.24993 6.07988 4.75007 6.07988 4.44176 5.76036L0.231232 1.39672C-0.0770772 1.0772 -0.0770772 0.55916 0.231232 0.23964Z" />
-                        </svg>
-                        <div class="dropdown-content">
-                            <div class="navbar-content">
-                                <div class="navbar-content-col">
-                                    <b>Titulo</b>
-                                    <a href="#">Item 1</a>
-                                </div>
-                                <div class="navbar-content-col">
-                                    <b>Titulo</b>
-                                    <a href="#">Item 1</a>
-                                    <a href="#">Item 2</a>
-                                </div>
-                                <div class="navbar-content-col">
-                                    <b>Titulo</b>
-                                    <a href="#">Item 1</a>
-                                    <a href="#">Item 2</a>
-                                    <a href="#">Item 3</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </li>
                 <li>
-                    <div :class="`navbar-item ${navbarItemClass('para-voce')} dropdown`" href="#">
+                    <a :class="`navbar-item`" href="<?php the_field('footer_for_you') ?>">
                         Para você
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" class="dropdown-icon">
-                            <path d="M0.231232 0.23964C0.53954 -0.07988 1.03941 -0.07988 1.34772 0.23964L5 4.02473L8.65228 0.23964C8.96059 -0.07988 9.46046 -0.07988 9.76877 0.23964C10.0771 0.55916 10.0771 1.0772 9.76877 1.39672L5.55824 5.76036C5.24993 6.07988 4.75007 6.07988 4.44176 5.76036L0.231232 1.39672C-0.0770772 1.0772 -0.0770772 0.55916 0.231232 0.23964Z" />
-                        </svg>
-                        <div class="dropdown-content">
-                            <div class="navbar-content">
-                                <div class="navbar-content-col">
-                                    <b>Titulo</b>
-                                    <a href="#">Item 1</a>
-                                    <a href="#">Item 2</a>
-                                    <a href="#">Item 3</a>
-                                    <a href="#">Item 4</a>
-                                </div>
-                                <div class="navbar-content-col">
-                                    <b>Titulo</b>
-                                    <a href="#">Item 1</a>
-                                    <a href="#">Item 2</a>
-                                    <a href="#">Item 3</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </li>
             </ul>
             <ul class="hide-mobile">
-                <li><a class="navbar-item link" href="#">Criar conta</a></li>
+                <li><a class="navbar-item link" href="<?php the_field('create_account_url') ?>">Criar conta</a></li>
                 <li>
                     <button class="btn-primary montserrat" @click="goTo('<?php the_field('schedule_url'); ?>')">Agendar consulta</button>
                 </li>
@@ -143,57 +80,19 @@
                     <path d="M18 6.41L16.59 5 12 9.59 7.41 5 6 6.41 10.59 11 6 15.59 7.41 17 12 12.41 16.59 17 18 15.59 13.41 11z" />
                 </svg>
             </a>
-            <a class="menu-mobile-item" href="#">
+            <a class="menu-mobile-item" href="/">
                 Home
             </a>
-            <a :class="`menu-mobile-item ${menu.showing_mobile_item_content.includes('para-sua-empresa') ? 'showing' : ''}`" href="#" @click.preven="toggleMobileItemContent('para-sua-empresa')">
-                <div class="flex align-center gap-3">
-                    Para sua empresa
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 10 6" class="dropdown-icon">
-                        <path d="M0.231232 0.23964C0.53954 -0.07988 1.03941 -0.07988 1.34772 0.23964L5 4.02473L8.65228 0.23964C8.96059 -0.07988 9.46046 -0.07988 9.76877 0.23964C10.0771 0.55916 10.0771 1.0772 9.76877 1.39672L5.55824 5.76036C5.24993 6.07988 4.75007 6.07988 4.44176 5.76036L0.231232 1.39672C-0.0770772 1.0772 -0.0770772 0.55916 0.231232 0.23964Z" />
-                    </svg>
-                </div>
+            <a class="menu-mobile-item" href="<?php the_field('footer_for_you_company_url') ?>">
+                Para sua empresa
             </a>
-            <div class="menu-mobile-item-content" v-if="menu.showing_mobile_item_content.includes('para-sua-empresa')">
-                <div class="navbar-content">
-                    <div class="navbar-content-col">
-                        <b>Titulo</b>
-                        <a href="#">Item 1</a>
-                        <a href="#">Item 2</a>
-                        <a href="#">Item 3</a>
-                        <a href="#">Item 4</a>
-                    </div>
-                    <div class="navbar-content-col">
-                        <b>Titulo</b>
-                        <a href="#">Item 1</a>
-                        <a href="#">Item 2</a>
-                        <a href="#">Item 3</a>
-                    </div>
-                </div>
-            </div>
-            <a :class="`menu-mobile-item ${menu.showing_mobile_item_content.includes('para-sua-operadora') ? 'showing' : ''}`" href="#" @click.preven="toggleMobileItemContent('para-sua-operadora')">
-                <div class="flex align-center gap-3">
-                    Para sua operadora
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 10 6" class="dropdown-icon">
-                        <path d="M0.231232 0.23964C0.53954 -0.07988 1.03941 -0.07988 1.34772 0.23964L5 4.02473L8.65228 0.23964C8.96059 -0.07988 9.46046 -0.07988 9.76877 0.23964C10.0771 0.55916 10.0771 1.0772 9.76877 1.39672L5.55824 5.76036C5.24993 6.07988 4.75007 6.07988 4.44176 5.76036L0.231232 1.39672C-0.0770772 1.0772 -0.0770772 0.55916 0.231232 0.23964Z" />
-                    </svg>
-                </div>
+            <a class="menu-mobile-item" href="<?php the_field('footer_for_your_operator_url') ?>">
+                Para sua operadora
             </a>
-            <div class="menu-mobile-item-content" v-if="menu.showing_mobile_item_content.includes('para-sua-operadora')">
-                <h1>conteudo operadora</h1>
-            </div>
-            <a :class="`menu-mobile-item ${menu.showing_mobile_item_content.includes('para-sua-voce') ? 'showing' : ''}`" href="#" @click.preven="toggleMobileItemContent('para-sua-voce')">
-                <div class="flex align-center gap-3">
-                    Para sua você
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 10 6" class="dropdown-icon">
-                        <path d="M0.231232 0.23964C0.53954 -0.07988 1.03941 -0.07988 1.34772 0.23964L5 4.02473L8.65228 0.23964C8.96059 -0.07988 9.46046 -0.07988 9.76877 0.23964C10.0771 0.55916 10.0771 1.0772 9.76877 1.39672L5.55824 5.76036C5.24993 6.07988 4.75007 6.07988 4.44176 5.76036L0.231232 1.39672C-0.0770772 1.0772 -0.0770772 0.55916 0.231232 0.23964Z" />
-                    </svg>
-                </div>
+            <a class="menu-mobile-item" href="<?php the_field('footer_for_you') ?>">
+                Para você
             </a>
-            <div class="menu-mobile-item-content" v-if="menu.showing_mobile_item_content.includes('para-sua-voce')">
-                <h1>conteudo voce</h1>
-            </div>
-            <a class="menu-mobile-item" href="#">
+            <a class="menu-mobile-item" href="<?php the_field('create_account_url'); ?>">
                 Cria conta
             </a>
             <a class="menu-mobile-item" href="<?php the_field('schedule_url'); ?>">

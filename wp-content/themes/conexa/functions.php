@@ -1,13 +1,17 @@
 <?php
+// Define your theme path as a constant
+define('THEME_PATH', get_template_directory_uri());
 
 function themePath($path)
 {
-    echo get_template_directory_uri() . $path;
+    // Use the defined constant for the theme path
+    echo THEME_PATH . $path;
 }
 
 function formatStrong($text)
 {
-    echo preg_replace('/\*(.*?)\*/', '<b>$1</b>', $text);
+    // Use echo to display HTML, but return the result for flexibility
+    return preg_replace('/\*(.*?)\*/', '<b>$1</b>', $text);
 }
 
 function loopToArray($field, $subField)
@@ -24,13 +28,21 @@ function loopToArray($field, $subField)
 
 function loopToString($field, $subField, $separator = ",")
 {
-    echo implode($separator, loopToArray($field, $subField));
+    // Use implode to concatenate array elements into a string
+    return implode($separator, loopToArray($field, $subField));
 }
 
 function customize_acf_wysiwyg_toolbar($toolbars)
 {
-    $toolbars['Very Simple'] = array();
-    $toolbars['Very Simple'][1] = array('bold', 'italic', 'underline', 'removeformat', 'wp_adv');
+    $toolbars['Very Simple'] = [
+        [
+            'bold',
+            'italic',
+            'underline',
+            'removeformat',
+            'wp_adv',
+        ],
+    ];
     return $toolbars;
 }
 add_filter('acf/fields/wysiwyg/toolbars', 'customize_acf_wysiwyg_toolbar');
@@ -47,8 +59,8 @@ add_action('rest_api_init', 'register_api_subscription');
 
 function get_pagarme_auth()
 {
-    $user = 'acc_7pOZmntXkFwWjkyM';
-    $key = 'pk_V2BZ9pASOyFglA84';
+    $user = getenv('PAGARME_ACCOUNT');
+    $key = getenv('PAGARME_PASSWORD');
     $auth = "$user:$key";
     return "Basic " . base64_encode($auth);
 }
@@ -64,17 +76,17 @@ function send_pagarme_request($method, $path, $body)
         'method' => $method,
         'headers' => [
             'Authorization' => get_pagarme_auth(),
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
         ],
-        'body' => $body
+        'body' => $body,
     ];
 
     $response = wp_safe_remote_request(get_pagarme_route($path), $request_args);
 
     if (is_wp_error($response)) {
-        return (object)[
+        return (object) [
             'error' => $response->get_error_message(),
-            'code' => $response->get_error_code()
+            'code' => $response->get_error_code(),
         ];
     }
 

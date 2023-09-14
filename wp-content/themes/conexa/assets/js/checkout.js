@@ -1,17 +1,17 @@
 const initialState = () => ({
     checkoutFields : checkoutFields,
     personalInfo : {
-        name  : 'Solaire of Astora',
-        docNumber : '111.111.111-11',
-        email : 'email@email.com'
+        name  : '',
+        docNumber : '',
+        email : ''
     },
     paymentInfo : {
         method : checkoutFields.payment_methods[0],
         creditcard : {
-            name: 'SOLAIRE OF ASTORA',
-            number : '4242 4242 424242 42424',
-            dueDate : '01/2024',
-            cvv : '123',
+            name: '',
+            number : '',
+            dueDate : '',
+            cvv : '',
         }
     },
     isSubmiting:false,
