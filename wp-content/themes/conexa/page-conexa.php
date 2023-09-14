@@ -312,7 +312,7 @@
             </div>
         </section>
 
-        <section id="lead-form">
+        <!-- <section id="lead-form">
             <h5>Preencha o formulário e <b>saiba mais</b></h5>
             <div class="lead-input">
                 <label>Nome</label>
@@ -363,7 +363,7 @@
             <select>
                 <option>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</option>
             </select>
-        </section>
+        </section> -->
         <section class="footer">
             <div class="col">
                 <img src="<?php themePath('/assets/images/conexa-white.png'); ?>" class="logo" />
