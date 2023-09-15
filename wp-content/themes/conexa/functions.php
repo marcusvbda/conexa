@@ -59,10 +59,8 @@ add_action('rest_api_init', 'register_api_subscription');
 
 function get_pagarme_auth()
 {
-    $user = getenv('PAGARME_ACCOUNT');
-    $key = getenv('PAGARME_PASSWORD');
-    $auth = "$user:$key";
-    return "Basic " . base64_encode($auth);
+    $secret_key = getenv('PAGARME_SECRET_KEY');
+    return "Basic " . base64_encode($secret_key);
 }
 
 function get_pagarme_route($path)
