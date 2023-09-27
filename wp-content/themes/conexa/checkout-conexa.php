@@ -13,12 +13,14 @@
     <link rel="icon" href="<?php themePath('/favicon.ico'); ?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?php themePath('/favicon.ico'); ?>" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=<?php recaptchSiteKey(); ?>"></script>
 </head>
 
 </html>
 
 <script>
     window.checkoutFields = <?php echo json_encode(get_fields()); ?>;
+    window.recaptcha_site_key = '<?php recaptchSiteKey(); ?>';
 </script>
 
 <body>

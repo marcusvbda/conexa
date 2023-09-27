@@ -1,17 +1,17 @@
 const initialState = () => ({
     checkoutFields : checkoutFields,
     personalInfo : {
-        name  : '',
-        docNumber : '',
-        email : ''
+        name  : 'Vinicius Bassalobre',
+        docNumber : '406.145.898-19',
+        email : 'bassalobre.vinicius@gmail.com'
     },
     paymentInfo : {
         method : checkoutFields.payment_methods[0],
         creditcard : {
-            name: '',
-            number : '',
-            dueDate : '',
-            cvv : '',
+            name: 'luke skywalker',
+            number : '4242 4242 42424 42424',
+            dueDate : '12/2023',
+            cvv : '123',
         }
     },
     isSubmiting:false,
@@ -172,7 +172,7 @@ window.checkout = createApp("#checkout", {
             const endpoint = options[this.checkoutFields.type]
             return `${endpoint}`;
         },
-        makePaymentPayload() {
+        makePaymentPayload(extra = {}) {
             let body = {
                 payment_method: this.getPaymentMethod(),
                 interval: this.getInterVal(),
@@ -215,7 +215,7 @@ window.checkout = createApp("#checkout", {
                     accept: 'application/json', 
                     'content-type': 'application/json',
                 },
-                body: JSON.stringify(body)
+                body: JSON.stringify({...body,...extra})
             }
             return payload;
         },
@@ -232,24 +232,28 @@ window.checkout = createApp("#checkout", {
         submit() {
             this.validInfos();
             this.confirm('Finalizar pagamento ?',() => {
-                this.isSubmiting = true;
-                const payload = this.makePaymentPayload();
-                  fetch(this.getUrl(), payload)
-                    .then(response => response.json())
-                    .then(response => {
-                        if(response.status === 'success') {
-                            this.success("Pagamento realizado com sucesso");
-                            this.resetState();
-                        } else if(response.message) {
-                            this.error(response.message);
-                        }
-                        this.isSubmiting = false;
-                    })
-                    .catch(err => {
-                        this.error(err.message);
-                        this.isSubmiting = false;
-                    });
-            })
+                grecaptcha.enterprise.ready(async () => {
+                    const recaptcha_token = await grecaptcha.enterprise.execute(window.recaptcha_site_key, {action: 'checkout'});
+                    this.isSubmiting = true;
+                    const payload = this.makePaymentPayload({recaptcha_token });
+                    fetch(this.getUrl(), payload)
+                        .then(response => response.json())
+                        .then(response => {
+                            if(response.status === 'success') {
+                                this.success("Pagamento realizado com sucesso");
+                                this.resetState();
+                            } else if(response.message) {
+                                this.error(response.message);
+                            }
+                            this.isSubmiting = false;
+                        })
+                        .catch(err => {
+                            this.error(err.message);
+                            this.isSubmiting = false;
+                        });
+                });
+            });
+           
         }
     }
 })
