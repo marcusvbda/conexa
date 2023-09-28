@@ -1,9 +1,14 @@
 <?php
+require_once 'vendor/autoload.php';
 define('THEME_PATH', get_template_directory_uri());
-define('RECAPTCHA_SCORE', 0.5);
-define('RECAPTCHA_SITE_KEY', '6Le0q1ooAAAAAHy7WJ7rBjfvaE1-AL6-fKjpeKbu');
-define('RECAPTCHA_SECRET_TOKEN', '6Le0q1ooAAAAAIb7nPV7eOR0kpT1wLyqmAQuQp1t');
-define('PAGARME_SECRET_KEY', 'sk_V2BZ9pASOyFglA84');
+define('RECAPTCHA_SCORE', +getenv("RECAPTCHA_SCORE"));
+define('RECAPTCHA_SITE_KEY', getenv('RECAPTCHA_SITE_KEY'));
+define('RECAPTCHA_SECRET_TOKEN', getenv('RECAPTCHA_SECRET_TOKEN'));
+define('PAGARME_SECRET_KEY', getenv("PAGARME_SECRET_KEY"));
+define('PAGARME_API_URL', getenv("PAGARME_API_URL"));
+define('PLANS_IDS', [
+    'DEFAULT' => +getenv("PAGARME_PLAN_ID_DEFAULT"),
+]);
 
 function themePath($path)
 {
@@ -14,7 +19,6 @@ function recaptchSiteKey()
 {
     echo RECAPTCHA_SITE_KEY;
 }
-
 
 function formatStrong($text)
 {
@@ -63,41 +67,9 @@ function register_api_subscription()
 
 add_action('rest_api_init', 'register_api_subscription');
 
-function get_pagarme_auth()
-{
-    $secret_key = PAGARME_SECRET_KEY;
-    return "Basic " . base64_encode("$secret_key:");
-}
-
 function get_pagarme_route($path)
 {
-    return "https://api.pagar.me/core/v5/$path";
-}
-
-function send_pagarme_request($method, $path, $body)
-{
-    $request_args = [
-        'method' => $method,
-        'headers' => [
-            'Authorization' => get_pagarme_auth(),
-            'Content-Type' => 'application/json',
-        ],
-        'body' => $body,
-    ];
-
-    $response = wp_safe_remote_request(get_pagarme_route($path), $request_args);
-
-    if (is_wp_error($response)) {
-        return (object) [
-            'error' => $response->get_error_message(),
-            'code' => $response->get_error_code(),
-        ];
-    }
-
-    $response_body = wp_remote_retrieve_body($response);
-    $response_data = json_decode($response_body);
-
-    return $response_data;
+    return PAGARME_API_URL . "/$path";
 }
 
 function validate_recaptcha($token)
@@ -126,12 +98,50 @@ function validate_recaptcha($token)
     return $recaptcha_result?->score >= RECAPTCHA_SCORE;
 }
 
+function make_pagarme_client()
+{
+    return new PagarMe\Client(PAGARME_SECRET_KEY);
+}
+
+function make_subscription_payload($body)
+{
+    return [
+        'plan_id' => PLANS_IDS[$body->planId],
+        'payment_method' => 'credit_card',
+        'card_number' => str_replace(' ', '', $body->paymentInfo->creditcard->number),
+        'card_holder_name' => $body->paymentInfo->creditcard->name,
+        'card_expiration_date' => str_replace('/', '', $body->paymentInfo->creditcard->dueDate),
+        'card_cvv' => $body->paymentInfo->creditcard->cvv,
+        'customer' => [
+            'email' => $body->personalInfo->email,
+            'name' => $body->personalInfo->name,
+            'document_number' =>  str_replace(' ', '', $body->personalInfo->docNumber)
+        ],
+    ];
+}
+
 function api_subscription($request)
 {
-    $body = $request->get_body();
-    if (!validate_recaptcha(json_decode($body)->recaptcha_token)) {
-        throw new Exception("Recaptcha inválido");
+    try {
+        $body = json_decode($request->get_body());
+        if (!validate_recaptcha($body->recaptchaToken)) {
+            return [
+                "status" => false,
+                "error" => "Recaptcha inválido"
+            ];
+        }
+
+        $pagarme = make_pagarme_client();
+        $payload = make_subscription_payload($body);
+        $subscription = $pagarme->subscriptions()->create($payload);
+        return [
+            "status" => true,
+            "data" => $subscription
+        ];
+    } catch (Exception $e) {
+        return [
+            "status" => false,
+            "error" => $e->getMessage()
+        ];
     }
-    $response = send_pagarme_request("POST", 'subscriptions', $body);
-    return $response;
 }

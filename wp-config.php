@@ -77,7 +77,10 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', getenv("WP_DEBUG") === "true" ? true : false);
+define('WP_DEBUG_LOG', getenv("WP_DEBUG") === "true" ? true : false);
+define('WP_DEBUG_DISPLAY', getenv("WP_DEBUG") === "true" ? true : false);
+define('SCRIPT_DEBUG', getenv("WP_DEBUG") === "true" ? true : false);
 
 /* Adicione valores personalizados entre esta linha até "Isto é tudo". */
 

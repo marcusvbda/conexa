@@ -20,7 +20,8 @@
 
 <script>
     window.checkoutFields = <?php echo json_encode(get_fields()); ?>;
-    window.recaptcha_site_key = '<?php recaptchSiteKey(); ?>';
+    window.recaptchaSiteKey = '<?php recaptchSiteKey(); ?>';
+    window.planId = "DEFAULT";
 </script>
 
 <body>
@@ -68,7 +69,7 @@
                             </div>
                             <div class="input-group">
                                 <label>Vencimento</label>
-                                <input type="text" v-model="paymentInfo.creditcard.dueDate" placeholder="Digite o vencimento..." @keyup="makeMask('paymentInfo.creditcard.dueDate','##/####')" :disabled="isSubmiting" />
+                                <input type="text" v-model="paymentInfo.creditcard.dueDate" placeholder="Digite o vencimento..." @keyup="makeMask('paymentInfo.creditcard.dueDate','##/##')" :disabled="isSubmiting" />
                             </div>
                             <div class="input-group">
                                 <label>CVV</label>

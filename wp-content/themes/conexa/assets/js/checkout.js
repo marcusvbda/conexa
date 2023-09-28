@@ -1,17 +1,19 @@
 const initialState = () => ({
     checkoutFields : checkoutFields,
+    planId : window.planId,
+    recaptchaSiteKey : window.recaptchaSiteKey,
     personalInfo : {
-        name  : 'Vinicius Bassalobre',
-        docNumber : '406.145.898-19',
-        email : 'bassalobre.vinicius@gmail.com'
+        name  : '',
+        docNumber : '',
+        email : ''
     },
     paymentInfo : {
         method : checkoutFields.payment_methods[0],
         creditcard : {
-            name: 'luke skywalker',
-            number : '4242 4242 42424 42424',
-            dueDate : '12/2023',
-            cvv : '123',
+            name: '',
+            number : '',
+            dueDate : '',
+            cvv : '',
         }
     },
     isSubmiting:false,
@@ -93,7 +95,7 @@ window.checkout = createApp("#checkout", {
             }
             validMessage = 'Vencimento inválido';
             const dueDate = creditcard.dueDate;
-            const dueDateRegex = /^\d{2}\/\d{4}$/;
+            const dueDateRegex = /^\d{2}\/\d{2}$/;
             if(!dueDateRegex.test(dueDate)) {
                 this.error(validMessage);
                 throw new Error(validMessage);
@@ -147,78 +149,6 @@ window.checkout = createApp("#checkout", {
                 }
               })
         },
-        getPaymentMethod() {
-            const options ={
-                "Cartão de crédito": "credit_card",
-            }
-            return options[this.paymentInfo.method] || '';
-        },
-        getInterVal() {
-            const options ={
-                "Recorrente": "month",
-            }
-            return options[this.checkoutFields.type] || '';
-        },
-        getInterValCount() {
-            const options = {
-                "Recorrente": 12,
-            }
-            return options[this.checkoutFields.type] || 1;
-        },
-        getUrl() {
-            const options = {
-                "Recorrente": '/wp-json/api/subscription',
-            }
-            const endpoint = options[this.checkoutFields.type]
-            return `${endpoint}`;
-        },
-        makePaymentPayload(extra = {}) {
-            let body = {
-                payment_method: this.getPaymentMethod(),
-                interval: this.getInterVal(),
-                minimum_price: null,
-                interval_count: this.getInterValCount(),
-                billing_type: 'prepaid',//postpaid, exact_day
-                installments: 1,
-                pricing_scheme: {scheme_type: 'Unit'},
-                quantity: null,
-                statement_descriptor: this.checkoutFields.soft_descriptor,
-                customer : {
-                    name : this.personalInfo.name,
-                    email : this.personalInfo.email,
-                    document : this.personalInfo.docNumber,
-                    document_type : 'CPF'
-                },
-                items : [
-                    {
-                      name : this.checkoutFields.name,
-                      quantity : 1,
-                      description : this.checkoutFields.soft_descriptor,
-                    }
-                ]
-            }
-
-            if(this.paymentInfo.method === 'Cartão de crédito') {
-                body.card  = {
-                    number: this.paymentInfo.creditcard.number,
-                    holder_name: this.paymentInfo.creditcard.name.toUpperCase(),
-                    holder_document: this.personalInfo.docNumber,
-                    exp_month: this.paymentInfo.creditcard.dueDate.split('/')[0],
-                    exp_year: this.paymentInfo.creditcard.dueDate.split('/')[1],
-                    cvv: this.paymentInfo.creditcard.cvv,
-                }
-            }
-
-            const payload = {
-                method: 'POST',
-                headers: {
-                    accept: 'application/json', 
-                    'content-type': 'application/json',
-                },
-                body: JSON.stringify({...body,...extra})
-            }
-            return payload;
-        },
         success(text) {
             Swal.fire({
                 title: 'Sucesso!',
@@ -233,17 +163,24 @@ window.checkout = createApp("#checkout", {
             this.validInfos();
             this.confirm('Finalizar pagamento ?',() => {
                 grecaptcha.enterprise.ready(async () => {
-                    const recaptcha_token = await grecaptcha.enterprise.execute(window.recaptcha_site_key, {action: 'checkout'});
+                    const recaptchaToken = await grecaptcha.enterprise.execute(this.recaptchaSiteKey, {action: 'checkout'});
                     this.isSubmiting = true;
-                    const payload = this.makePaymentPayload({recaptcha_token });
-                    fetch(this.getUrl(), payload)
-                        .then(response => response.json())
+                    const payload ={ ...this.$data,recaptchaToken};
+                    console.log(payload)
+                    fetch('/wp-json/api/subscription',{
+                        method: 'POST',
+                        headers: {
+                            accept: 'application/json', 
+                            'content-type': 'application/json',
+                        },
+                        body: JSON.stringify(payload)
+                    }).then(response => response.json())
                         .then(response => {
                             if(response.status === 'success') {
                                 this.success("Pagamento realizado com sucesso");
                                 this.resetState();
-                            } else if(response.message) {
-                                this.error(response.message);
+                            } else if(response.error) {
+                                this.error(response.error);
                             }
                             this.isSubmiting = false;
                         })
