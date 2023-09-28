@@ -176,7 +176,7 @@ window.checkout = createApp("#checkout", {
                         body: JSON.stringify(payload)
                     }).then(response => response.json())
                         .then(response => {
-                            if(response.status === 'success') {
+                            if(response.status) {
                                 this.success("Pagamento realizado com sucesso");
                                 this.resetState();
                             } else if(response.error) {
