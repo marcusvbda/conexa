@@ -18,6 +18,7 @@
 </html>
 
 <body>
+    <?php get_header(); ?>
     <section id="navbar-and-menu">
         <!-- navbar desktop -->
         <nav class="navbar">
