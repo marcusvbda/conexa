@@ -39,7 +39,8 @@ function loopToArray($field, $subField)
 
 function loopToString($field, $subField, $separator = ",")
 {
-    return implode($separator, loopToArray($field, $subField));
+
+    echo implode($separator, loopToArray($field, $subField));
 }
 
 function customize_acf_wysiwyg_toolbar($toolbars)

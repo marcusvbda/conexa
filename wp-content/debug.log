@@ -1,2 +1,23 @@
 [28-Sep-2023 18:06:27 UTC] PHP Notice:  A função register_rest_route foi chamada <strong>incorretamente</strong>. A definição da rota da API REST para <code>api/subscription</code> está faltando um argumento <code>permission_callback</code> obrigatório. Para rotas com de API REST que são públicas, use <code>__return_true</code> como o callback de permissão. Leia como <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Depurar o WordPress</a> para mais informações. (Esta mensagem foi adicionada na versão 5.5.0.) in /var/www/html/wp-includes/functions.php on line 5905
 [28-Sep-2023 18:06:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-includes/functions.php:5905) in /var/www/html/wp-admin/admin-header.php on line 9
+[29-Sep-2023 18:11:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function field() in /var/www/html/wp-content/themes/conexa/page-conexa.php:117
+Stack trace:
+#0 /var/www/html/wp-includes/template-loader.php(106): include()
+#1 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#2 /var/www/html/index.php(17): require('/var/www/html/w...')
+#3 {main}
+  thrown in /var/www/html/wp-content/themes/conexa/page-conexa.php on line 117
+[29-Sep-2023 18:13:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function field() in /var/www/html/wp-content/themes/conexa/page-conexa.php:2
+Stack trace:
+#0 /var/www/html/wp-includes/template-loader.php(106): include()
+#1 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#2 /var/www/html/index.php(17): require('/var/www/html/w...')
+#3 {main}
+  thrown in /var/www/html/wp-content/themes/conexa/page-conexa.php on line 2
+[29-Sep-2023 18:14:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function field() in /var/www/html/wp-content/themes/conexa/page-conexa.php:2
+Stack trace:
+#0 /var/www/html/wp-includes/template-loader.php(106): include()
+#1 /var/www/html/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#2 /var/www/html/index.php(17): require('/var/www/html/w...')
+#3 {main}
+  thrown in /var/www/html/wp-content/themes/conexa/page-conexa.php on line 2
