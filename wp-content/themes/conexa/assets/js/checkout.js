@@ -77,11 +77,11 @@ window.checkout = createApp("#checkout", {
                 throw new Error(validMessage);
             }
         },
-        validCPF() {
-            const validMessage = 'CPF inválido';
-            const cpf = this.personalInfo.docNumber;
-            const regex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
-            if(!regex.test(cpf)) {
+        validCNPJ() {
+            const validMessage = 'CNPJ inválido';
+            const cnpj = this.personalInfo.docNumber;
+            const regex = /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/;
+            if (!regex.test(cnpj)) {
                 this.error(validMessage);
                 throw new Error(validMessage);
             }
@@ -123,7 +123,7 @@ window.checkout = createApp("#checkout", {
         validPersonalInfos(){
             this.validName();
             this.validEmail();
-            this.validCPF();
+            this.validCNPJ();
             this.validPaymentInfo();
         },
         validInfos(){

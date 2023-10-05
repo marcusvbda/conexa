@@ -37,16 +37,16 @@
                     <div class="container-fluid">
                         <h3 class="montserrat">Dados pessoais</h3>
                         <div class="input-group">
-                            <label>Nome completo</label>
-                            <input type="text" v-model="personalInfo.name" placeholder="Digite seu nome completo..." :disabled="isSubmiting" />
+                            <label>Razão social</label>
+                            <input type="text" v-model="personalInfo.name" placeholder="Digite sua razão social..." :disabled="isSubmiting" />
                         </div>
                         <div class="input-group">
                             <label>Email</label>
                             <input type="email" v-model="personalInfo.email" placeholder="Digite seu email..." :disabled="isSubmiting" />
                         </div>
                         <div class="input-group">
-                            <label>CPF</label>
-                            <input type="text" v-model="personalInfo.docNumber" placeholder="Digite seu cpf..." @keyup="makeMask('personalInfo.docNumber','###.###.###-##')" :disabled="isSubmiting" />
+                            <label>CNPJ</label>
+                            <input type="text" v-model="personalInfo.docNumber" placeholder="Digite seu CNPJ..." @keyup="makeMask('personalInfo.docNumber','##.###.###/####-##')" :disabled="isSubmiting" />
                         </div>
                     </div>
                 </div>
