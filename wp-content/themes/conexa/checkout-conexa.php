@@ -8,7 +8,7 @@
     <title><?php the_field('title'); ?></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <?php wp_head(); ?>
-    <link rel="stylesheet" href="<?php themePath('/assets/css/checkout.css'); ?>">
+    <link rel="stylesheet" href="<?php themePath('/assets/styles/checkout.min.css'); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="icon" href="<?php themePath('/favicon.ico'); ?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?php themePath('/favicon.ico'); ?>" type="image/x-icon">

@@ -8,7 +8,7 @@
     <title><?php the_field('title'); ?></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <?php wp_head(); ?>
-    <link rel="stylesheet" href="<?php themePath('/assets/css/main.css'); ?>">
+    <link rel="stylesheet" href="<?php themePath('/assets/styles/main.min.css'); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script src='<?php themePath("/assets/js/main.js"); ?>'></script>
     <link rel="icon" href="<?php themePath('/favicon.ico'); ?>" type="image/x-icon">
@@ -96,7 +96,7 @@
             <a class="menu-mobile-item" href="<?php the_field('create_account_url'); ?>">
                 Cria conta
             </a>
-            <a class="menu-mobile-item" href="<?php the_field('schedule_url'); ?>">
+            <a class="menu-mobile-item teste" href="<?php the_field('schedule_url'); ?>">
                 Agendar consulta
             </a>
         </div>
