@@ -1266,7 +1266,7 @@
             {
                 "key": "field_64e55e2894546",
                 "label": "Rodapé - \"Para sua empresa\" URL",
-                "name": "footer_for_you_company_url",
+                "name": "for_you_company_url",
                 "type": "url",
                 "instructions": "",
                 "required": 1,
@@ -1282,7 +1282,7 @@
             {
                 "key": "field_64e55edf4470c",
                 "label": "Rodapé - \"Para sua operadora\" URL",
-                "name": "footer_for_your_operator_url",
+                "name": "for_your_operator_url",
                 "type": "url",
                 "instructions": "",
                 "required": 1,
@@ -1298,7 +1298,7 @@
             {
                 "key": "field_64e55ef84470d",
                 "label": "Rodapé - \"Para sua você\" URL",
-                "name": "footer_for_you",
+                "name": "for_you",
                 "type": "url",
                 "instructions": "",
                 "required": 1,
@@ -1314,7 +1314,7 @@
             {
                 "key": "field_64e55f1c4470e",
                 "label": "Rodapé - \"Imprensa\" URL",
-                "name": "footer_press",
+                "name": "press",
                 "type": "url",
                 "instructions": "",
                 "required": 1,
@@ -1330,7 +1330,7 @@
             {
                 "key": "field_64e55f474470f",
                 "label": "Rodapé - \"Carreiras\" URL",
-                "name": "footer_career",
+                "name": "career",
                 "type": "url",
                 "instructions": "",
                 "required": 1,
@@ -1346,7 +1346,7 @@
             {
                 "key": "field_64e55f7344710",
                 "label": "Rodapé - \"Perguntas frequentes\" URL",
-                "name": "footer_questions",
+                "name": "questions",
                 "type": "url",
                 "instructions": "",
                 "required": 1,
