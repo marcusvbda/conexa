@@ -11,17 +11,17 @@
                 </a>
             </li>
             <li>
-                <a :class="`navbar-item`" href="<?php the_field('for_you_company_url') ?>">
+                <a :class="`navbar-item ${navbarItemClass('for_you_company')}`" href="<?php the_field('for_you_company_url') ?>">
                     Para sua empresa
                 </a>
             </li>
             <li>
-                <a :class="`navbar-item`" href="<?php the_field('for_your_operator_url') ?>">
+                <a :class="`navbar-item ${navbarItemClass('for_your_operator')}`" href="<?php the_field('for_your_operator_url') ?>">
                     Para sua operadora
                 </a>
             </li>
             <li>
-                <a :class="`navbar-item`" href="<?php the_field('for_you') ?>">
+                <a :class="`navbar-item ${navbarItemClass('for_you')}`" href="<?php the_field('for_you') ?>">
                     Para você
                 </a>
             </li>

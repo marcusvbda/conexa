@@ -17,10 +17,10 @@
 
 </html>
 
-<body>
+<body title="home">
     <?php get_header(); ?>
     <?php require_once('components/menu.php'); ?>
-    <section id="content"><!-- section will be closed on footer -->
+    <section id=" content"><!-- section will be closed on footer -->
         <section id="banner-1">
             <div class="initial-banner" style="--banner-1 : url('<?php the_field('section_1_banner'); ?>')">
                 <div class="initial-banner-content">

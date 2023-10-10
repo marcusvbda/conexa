@@ -17,7 +17,7 @@
 
 </html>
 
-<body>
+<body title="for_you_company">
     <?php get_header(); ?>
     <?php require_once('components/menu.php'); ?>
     <script src='<?php themePath('/assets/js/vue3.min.js'); ?>'></script>
