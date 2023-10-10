@@ -63,6 +63,7 @@ function register_api_subscription()
     register_rest_route('api', '/subscription', array(
         'methods' => 'POST',
         'callback' => 'api_subscription',
+        'permission_callback' => '__return_true',
     ));
 }
 
