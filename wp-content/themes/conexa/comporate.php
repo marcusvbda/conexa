@@ -9,6 +9,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <?php wp_head(); ?>
     <link rel="stylesheet" href="<?php themePath('/assets/styles/main.min.css'); ?>">
+    <link rel="stylesheet" href="<?php themePath('/assets/styles/corporate.min.css'); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script src='<?php themePath("/assets/js/main.js"); ?>'></script>
     <link rel="icon" href="<?php themePath('/favicon.ico'); ?>" type="image/x-icon">
@@ -17,9 +18,10 @@
 
 </html>
 
-<body title="for_you_company">
+<body id="for_you_company">
     <?php get_header(); ?>
     <?php require_once('components/menu.php'); ?>
+    <section class="top-banner" style="<?php make_api_bg_vars('image_banner_top'); ?>"></section>
     <script src='<?php themePath('/assets/js/vue3.min.js'); ?>'></script>
     <script src='<?php themePath('/assets/js/navbar-menu.js'); ?>'></script>
     <?php require_once('components/footer.php'); ?>

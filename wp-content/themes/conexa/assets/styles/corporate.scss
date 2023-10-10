@@ -1,0 +1,21 @@
+@import "./variable";
+
+#for_you_company {
+  .top-banner {
+    background-image: var(--image_banner_top);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    aspect-ratio: calc(1274 / 700);
+    height: auto;
+    width: 100%;
+    flex-basis: 100%;
+
+    @media screen and (max-width: $breakpoint) {
+      background-image: var(--image_banner_top_mobile);
+      aspect-ratio: calc(390 / 220);
+      background-size: contain;
+    }
+  }
+}

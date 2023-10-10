@@ -9,7 +9,7 @@ window.navbarAndMenu = createApp("#navbar-and-menu", {
         }
     },
     created() {
-       this.current_page = document?.querySelector("body")?.getAttribute("title") || "home"
+       this.current_page = document?.querySelector("body")?.getAttribute("id") || "home"
     },
     methods: {
         navbarItemClass(item) {

@@ -147,3 +147,10 @@ function api_subscription($request)
         ];
     }
 }
+
+
+function make_api_bg_vars($field)
+{
+    $field_mobile = $field . "_mobile";
+    echo "--$field: url('" . get_field($field) . "');--" . $field_mobile . ": url('" . get_field($field_mobile) . "')";
+}
