@@ -174,7 +174,76 @@
                     </div>
                 </div>
             </div>
-            <div class="section-container">slider</div>
+            <div class="section-container">
+                <div class="slider-testimonial" id="slider-testimonial">
+                    <div class="slider-testimonial-content" v-show="slider_testimonial.pos == 0">
+                        <div class="slider-testimonial-image">
+                            <img src="<?php themePath('/assets/images/bianca.png'); ?>" alt="">
+                        </div>
+                        <div class="slider-testimonial-title">
+                            <div class="slider-testimonial-left">
+                                <b>Bianca Bondezan 1</b>
+                                <small>Produto no Mercado Livre</small>
+                            </div>
+                            <div class="slider-testimonial-right">
+                                <img src="<?php themePath('/assets/images/ml.png'); ?>" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-testimonial-text">
+                            O apoio psicológico tem ajudado bastante os colaboradores, principalmente desde o início da pandemia, onde todos precisaram deixar um pouco a convivência social e se adaptar a uma nova realidade.
+                        </div>
+                    </div>
+                    <div class="slider-testimonial-content" v-show="slider_testimonial.pos == 1">
+                        <div class="slider-testimonial-image">
+                            <img src="<?php themePath('/assets/images/bianca.png'); ?>" alt="">
+                        </div>
+                        <div class="slider-testimonial-title">
+                            <div class="slider-testimonial-left">
+                                <b>Bianca Bondezan 2</b>
+                                <small>Produto no Mercado Livre</small>
+                            </div>
+                            <div class="slider-testimonial-right">
+                                <img src="<?php themePath('/assets/images/ml.png'); ?>" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-testimonial-text">
+                            O apoio psicológico tem ajudado bastante os colaboradores, principalmente desde o início da pandemia, onde todos precisaram deixar um pouco a convivência social e se adaptar a uma nova realidade.
+                        </div>
+                    </div>
+                    <div class="slider-testimonial-content" v-show="slider_testimonial.pos == 2">
+                        <div class="slider-testimonial-image">
+                            <img src="<?php themePath('/assets/images/bianca.png'); ?>" alt="">
+                        </div>
+                        <div class="slider-testimonial-title">
+                            <div class="slider-testimonial-left">
+                                <b>Bianca Bondezan 3</b>
+                                <small>Produto no Mercado Livre</small>
+                            </div>
+                            <div class="slider-testimonial-right">
+                                <img src="<?php themePath('/assets/images/ml.png'); ?>" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-testimonial-text">
+                            O apoio psicológico tem ajudado bastante os colaboradores, principalmente desde o início da pandemia, onde todos precisaram deixar um pouco a convivência social e se adaptar a uma nova realidade.
+                        </div>
+                    </div>
+                    <div class="slider-testimonial-btns">
+                        <div v-for="i in slider_testimonial.total" :key="i" :class="`slider-testimonial-dot ${slider_testimonial.pos == i-1 && 'active'}`" @click="setTestimonialSliderPos(i-1)"></div>
+                        <div class="slider-testimonial-arrows">
+                            <a href="#" :class="`${slider_testimonial.pos > 0  && 'clickable'}`" @click.prevent="setTestimonialSliderPrev()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="144" height="32" viewBox="0 0 32 32" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3949 0.743852C19.4152 1.73045 19.4152 3.33003 18.3949 4.31663L6.30752 16.004L18.3949 27.6914C19.4152 28.678 19.4152 30.2776 18.3949 31.2642C17.3745 32.2508 15.7202 32.2508 14.6998 31.2642L0.764949 17.7904C-0.255408 16.8038 -0.255408 15.2042 0.764949 14.2176L14.6998 0.743852C15.7202 -0.242742 17.3745 -0.242742 18.3949 0.743852Z" fill="#d9d9d9" />
+                                </svg>
+                            </a>
+                            <a href="#" :class="`${slider_testimonial.pos < slider_testimonial.total -1 && 'clickable'}`" @click.prevent="setTestimonialSliderNext()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="144" height="32" viewBox="0 0 32 32" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3949 0.743852C19.4152 1.73045 19.4152 3.33003 18.3949 4.31663L6.30752 16.004L18.3949 27.6914C19.4152 28.678 19.4152 30.2776 18.3949 31.2642C17.3745 32.2508 15.7202 32.2508 14.6998 31.2642L0.764949 17.7904C-0.255408 16.8038 -0.255408 15.2042 0.764949 14.2176L14.6998 0.743852C15.7202 -0.242742 17.3745 -0.242742 18.3949 0.743852Z" fill="#d9d9d9" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </section>
     <script src='<?php themePath('/assets/js/vue3.min.js'); ?>'></script>
