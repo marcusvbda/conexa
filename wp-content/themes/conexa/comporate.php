@@ -94,7 +94,7 @@
                         na App Store
                     </div>
                     <div class="mobile-app-download">
-                        <a href="#">
+                        <a href="<?php the_field('link_app_store') ?>" target="_blank">
                             <svg width="159" height="54" viewBox="0 0 159 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_d_233_2369)">
                                     <rect x="4" width="151" height="46" rx="6" fill="white" />
@@ -118,7 +118,7 @@
                                 </defs>
                             </svg>
                         </a>
-                        <a href="#">
+                        <a href="<?php the_field('link_google_play') ?>" target="_blank">
                             <svg width="159" height="54" viewBox="0 0 159 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_d_233_2370)">
                                     <rect x="4" width="151" height="46" rx="6" fill="white" />
