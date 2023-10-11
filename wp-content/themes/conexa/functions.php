@@ -148,9 +148,14 @@ function api_subscription($request)
     }
 }
 
-
-function make_api_bg_vars($field, $has_mobile = false)
+function make_api_bg_vars($field, $has_mobile = false, $extra = [])
 {
     $field_mobile = $has_mobile ?  $field . "_mobile" : $field;
-    echo "--$field: url('" . get_field($field) . "');--" . $field_mobile . ": url('" . get_field($field_mobile) . "')";
+    $result = "--$field: url('" . get_field($field) . "');--" . $field_mobile . ": url('" . get_field($field_mobile) . "')";
+    if (count($extra)) {
+        foreach ($extra as $key => $value) {
+            $result .= ";--$key: $value";
+        }
+    }
+    echo $result;
 }

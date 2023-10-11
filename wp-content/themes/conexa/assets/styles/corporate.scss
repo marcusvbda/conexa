@@ -2,7 +2,44 @@
 
 #for_you_company {
   .top-banner-2-mobile {
+    margin-bottom: 200px;
     display: none;
+    position: relative;
+    .pranchetas {
+      position: absolute;
+      left: 0;
+      bottom: calc(224px / 2 * -1);
+      width: 126px;
+      height: 224px;
+      flex-shrink: 0;
+    }
+
+    .btn-enter-account {
+      display: none;
+      text-decoration: unset;
+      border-radius: 8px 0px 0px 8px;
+      background: #1900af;
+      box-shadow: 0px 4px 13px 2px rgba(0, 0, 0, 0.25);
+      color: #fffffa;
+      font-family: $nexa;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      display: flex;
+      border-radius: 100%;
+      position: absolute;
+      right: calc(76px / 2);
+      bottom: calc(76px / 2 * -1);
+      height: 76px;
+      width: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: $breakpoint) {
+        display: flex;
+      }
+    }
 
     @media screen and (max-width: $breakpoint) {
       background-image: var(--image_banner_top_mobile);
@@ -23,8 +60,33 @@
     aspect-ratio: calc(1286 / 699);
     height: auto;
     padding: 102px 100px;
+    padding-bottom: 0;
+    margin-bottom: 102px;
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    .btn-enter-account {
+      text-decoration: unset;
+      border-radius: 8px 0px 0px 8px;
+      background: #1900af;
+      box-shadow: 0px 4px 13px 2px rgba(0, 0, 0, 0.25);
+      color: #fffffa;
+      font-family: $nexa;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      display: flex;
+      padding: 25px 40px;
+      position: absolute;
+      right: 0;
+      bottom: calc(63px / 2 * -1);
+      z-index: 100;
+
+      @media screen and (max-width: $breakpoint) {
+        display: none;
+      }
+    }
 
     .top-banner-content {
       display: flex;
@@ -53,7 +115,10 @@
     }
 
     @media screen and (max-width: $breakpoint) {
-      background-image: unset;
+      background-image: var(--image_banner_top_mobile);
+      background-size: auto;
+      background-position: left top;
+      background-color: white;
       aspect-ratio: unset;
       padding: 40px 36px;
 
@@ -131,7 +196,7 @@
       display: flex;
       flex-direction: row;
       gap: 40px;
-      width: 90%;
+      width: 80%;
 
       .top-banner-box {
         padding: 40px;
@@ -151,17 +216,24 @@
           line-height: 138%; /* 44.16px */
           margin-bottom: 8px;
           margin-top: 0;
+          @media screen and (max-width: $breakpoint) {
+            display: none;
+          }
         }
 
         span {
           color: var(--Black, #0a0a32);
           font-family: $montserrat;
-          font-size: 16px;
+          font-size: 14px;
           font-style: normal;
           font-weight: 300;
           line-height: 145%; /* 23.2px */
           width: 80%;
-          margin-bottom: 35px;
+          margin-bottom: 10px;
+          @media screen and (max-width: $breakpoint) {
+            width: 100%;
+            font-size: 14px;
+          }
         }
 
         .top-banner-box-btn {
@@ -176,12 +248,16 @@
             color: var(--White, #fffffa);
             text-align: center;
             font-family: $montserrat;
-            font-size: 16px;
+            font-size: 14px;
             font-style: normal;
             font-weight: 600;
             line-height: normal;
             text-decoration: none;
             transition: 0.5s;
+
+            @media screen and (max-width: $breakpoint) {
+              font-size: 12px;
+            }
             &:hover {
               filter: brightness(1.3);
             }
