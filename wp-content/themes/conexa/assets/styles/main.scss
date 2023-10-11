@@ -65,6 +65,15 @@ ul {
   position: relative;
 }
 
+.navbar ul .navbar-item:after {
+  background-color: transparent;
+  height: 4px;
+  content: "";
+  display: block;
+  border-radius: 6px;
+  margin: 3px 20% 0;
+}
+
 .navbar ul .navbar-item.active {
   color: var(--primary-color);
   font-weight: bolder;
@@ -170,7 +179,7 @@ button.btn-primary {
 }
 
 .montserrat {
-  font-family: $montserrat !important;
+  font-family: $montserrat;
 }
 
 .flex {
