@@ -97,7 +97,6 @@
     <script src='<?php themePath('/assets/js/vue3.min.js'); ?>'></script>
     <script src='<?php themePath('/assets/js/init-checkout.js'); ?>'></script>
     <script src='<?php themePath('/assets/js/checkout.js'); ?>'></script>
-
 </body>
 <?php get_footer(); ?>
 

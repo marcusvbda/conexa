@@ -149,8 +149,8 @@ function api_subscription($request)
 }
 
 
-function make_api_bg_vars($field)
+function make_api_bg_vars($field, $has_mobile = false)
 {
-    $field_mobile = $field . "_mobile";
+    $field_mobile = $has_mobile ?  $field . "_mobile" : $field;
     echo "--$field: url('" . get_field($field) . "');--" . $field_mobile . ": url('" . get_field($field_mobile) . "')";
 }
