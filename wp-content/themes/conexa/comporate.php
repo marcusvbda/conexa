@@ -176,57 +176,25 @@
             </div>
             <div class="section-container">
                 <div class="slider-testimonial" id="slider-testimonial">
-                    <div class="slider-testimonial-content" v-show="slider_testimonial.pos == 0">
-                        <div class="slider-testimonial-image">
-                            <img src="<?php themePath('/assets/images/bianca.png'); ?>" alt="">
-                        </div>
-                        <div class="slider-testimonial-title">
-                            <div class="slider-testimonial-left">
-                                <b>Bianca Bondezan 1</b>
-                                <small>Produto no Mercado Livre</small>
+                    <?php foreach (get_field('depoimentos') as  $key => $value) : ?>
+                        <div class="slider-testimonial-content" v-show="slider_testimonial.pos == <?php echo $key ?>">
+                            <div class="slider-testimonial-image">
+                                <img src="<?php echo $value["photo"]; ?>" alt="">
                             </div>
-                            <div class="slider-testimonial-right">
-                                <img src="<?php themePath('/assets/images/ml.png'); ?>" alt="">
+                            <div class="slider-testimonial-title">
+                                <div class="slider-testimonial-left">
+                                    <b><?php echo $value["name"]; ?></b>
+                                    <small><?php echo $value["profession"]; ?></small>
+                                </div>
+                                <div class="slider-testimonial-right">
+                                    <img src="<?php echo $value["company"]; ?>" alt="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="slider-testimonial-text">
-                            O apoio psicológico tem ajudado bastante os colaboradores, principalmente desde o início da pandemia, onde todos precisaram deixar um pouco a convivência social e se adaptar a uma nova realidade.
-                        </div>
-                    </div>
-                    <div class="slider-testimonial-content" v-show="slider_testimonial.pos == 1">
-                        <div class="slider-testimonial-image">
-                            <img src="<?php themePath('/assets/images/bianca.png'); ?>" alt="">
-                        </div>
-                        <div class="slider-testimonial-title">
-                            <div class="slider-testimonial-left">
-                                <b>Bianca Bondezan 2</b>
-                                <small>Produto no Mercado Livre</small>
-                            </div>
-                            <div class="slider-testimonial-right">
-                                <img src="<?php themePath('/assets/images/ml.png'); ?>" alt="">
+                            <div class="slider-testimonial-text">
+                                <?php echo $value["content"]; ?>
                             </div>
                         </div>
-                        <div class="slider-testimonial-text">
-                            O apoio psicológico tem ajudado bastante os colaboradores, principalmente desde o início da pandemia, onde todos precisaram deixar um pouco a convivência social e se adaptar a uma nova realidade.
-                        </div>
-                    </div>
-                    <div class="slider-testimonial-content" v-show="slider_testimonial.pos == 2">
-                        <div class="slider-testimonial-image">
-                            <img src="<?php themePath('/assets/images/bianca.png'); ?>" alt="">
-                        </div>
-                        <div class="slider-testimonial-title">
-                            <div class="slider-testimonial-left">
-                                <b>Bianca Bondezan 3</b>
-                                <small>Produto no Mercado Livre</small>
-                            </div>
-                            <div class="slider-testimonial-right">
-                                <img src="<?php themePath('/assets/images/ml.png'); ?>" alt="">
-                            </div>
-                        </div>
-                        <div class="slider-testimonial-text">
-                            O apoio psicológico tem ajudado bastante os colaboradores, principalmente desde o início da pandemia, onde todos precisaram deixar um pouco a convivência social e se adaptar a uma nova realidade.
-                        </div>
-                    </div>
+                    <? endforeach; ?>
                     <div class="slider-testimonial-btns">
                         <div v-for="i in slider_testimonial.total" :key="i" :class="`slider-testimonial-dot ${slider_testimonial.pos == i-1 && 'active'}`" @click="setTestimonialSliderPos(i-1)"></div>
                         <div class="slider-testimonial-arrows">
