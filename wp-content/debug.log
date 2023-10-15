@@ -176,3 +176,38 @@ Stack trace:
 [15-Oct-2023 02:19:49 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
 [15-Oct-2023 02:19:49 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
 [15-Oct-2023 04:19:49 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/conexa/comporate.php on line 382
+[15-Oct-2023 06:24:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 179
+[15-Oct-2023 06:24:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 220
+[15-Oct-2023 06:24:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 278
+[15-Oct-2023 06:24:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 358
+[15-Oct-2023 06:24:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 380
+[15-Oct-2023 06:24:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 476
+[15-Oct-2023 06:24:51 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 490
+[15-Oct-2023 06:25:11 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 179
+[15-Oct-2023 06:25:11 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 220
+[15-Oct-2023 06:25:11 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 278
+[15-Oct-2023 06:25:11 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 358
+[15-Oct-2023 06:25:11 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 380
+[15-Oct-2023 06:25:11 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 476
+[15-Oct-2023 06:25:11 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 490
+[15-Oct-2023 06:25:19 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 179
+[15-Oct-2023 06:25:19 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 220
+[15-Oct-2023 06:25:19 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 278
+[15-Oct-2023 06:25:19 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 358
+[15-Oct-2023 06:25:19 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 380
+[15-Oct-2023 06:25:19 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 476
+[15-Oct-2023 06:25:19 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 490
+[15-Oct-2023 06:25:31 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 179
+[15-Oct-2023 06:25:31 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 220
+[15-Oct-2023 06:25:31 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 278
+[15-Oct-2023 06:25:31 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 358
+[15-Oct-2023 06:25:31 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 380
+[15-Oct-2023 06:25:31 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 476
+[15-Oct-2023 06:25:31 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 490
+[15-Oct-2023 06:25:39 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 179
+[15-Oct-2023 06:25:39 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 220
+[15-Oct-2023 06:25:39 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 278
+[15-Oct-2023 06:25:39 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 358
+[15-Oct-2023 06:25:39 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 380
+[15-Oct-2023 06:25:39 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 476
+[15-Oct-2023 06:25:39 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /var/www/html/wp-content/themes/conexa/operator.php on line 490

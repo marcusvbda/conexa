@@ -16,7 +16,7 @@
                 </a>
             </li>
             <li>
-                <a :class="`navbar-item ${navbarItemClass('for_your_operator')}`" href="<?php the_field('for_your_operator_url') ?>">
+                <a :class="`navbar-item ${navbarItemClass('for_you_operator')}`" href="<?php the_field('for_your_operator_url') ?>">
                     Para sua operadora
                 </a>
             </li>

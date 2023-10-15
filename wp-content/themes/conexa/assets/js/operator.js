@@ -1,4 +1,4 @@
-window.corporateAPP = createApp("#corporate", {
+window.corporateAPP = createApp("#operator", {
     data() {
         return {
             topbar : {
