@@ -63,6 +63,7 @@ function register_api_subscription()
     register_rest_route('api', '/subscription', array(
         'methods' => 'POST',
         'callback' => 'api_subscription',
+        'permission_callback' => '__return_true',
     ));
 }
 
@@ -145,4 +146,16 @@ function api_subscription($request)
             "error" => $e->getMessage()
         ];
     }
+}
+
+function make_api_bg_vars($field, $has_mobile = false, $extra = [])
+{
+    $field_mobile = $has_mobile ?  $field . "_mobile" : $field;
+    $result = "--$field: url('" . get_field($field) . "');--" . $field_mobile . ": url('" . get_field($field_mobile) . "')";
+    if (count($extra)) {
+        foreach ($extra as $key => $value) {
+            $result .= ";--$key: $value";
+        }
+    }
+    echo $result;
 }

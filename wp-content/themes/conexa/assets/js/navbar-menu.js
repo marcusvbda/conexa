@@ -4,13 +4,17 @@ window.navbarAndMenu = createApp("#navbar-and-menu", {
             menu: {
                 showing: false,
                 showing_mobile_item_content: [],
-                current_page : 'home'
+                current_page : ''
             }
         }
     },
+    created() {
+       this.current_page = document?.querySelector("body")?.getAttribute("id") || "home"
+    },
     methods: {
         navbarItemClass(item) {
-            return this.menu.current_page == item ? 'active' : '';
+            const isCurrent = this.current_page == item;
+            return isCurrent && 'active';
         },
         toggleMenu() {
             this.menu.showing = !this.menu.showing;
