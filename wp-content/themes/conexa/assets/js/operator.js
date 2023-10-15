@@ -4,10 +4,6 @@ window.corporateAPP = createApp("#operator", {
             topbar : {
                 mobile_box_visible : 'company',
             },
-            slider_testimonial : {
-                total : 0,
-                pos:0
-            },
             slider_journey : {
                 total : 0,
                 pos:0
@@ -23,7 +19,6 @@ window.corporateAPP = createApp("#operator", {
         }
     },
     mounted() {
-        this.initTestimonialSlider()
         this.initJourney()
         this.initSwiperCustomers()
         this.initSwiperMental()
@@ -56,22 +51,16 @@ window.corporateAPP = createApp("#operator", {
         },
         initSwiperCustomers(){
             new Swiper('.swiper-customer .swiper-1', this.getCustomerSwipperConfig());
-            new Swiper('.swiper-customer .swiper-2', this.getCustomerSwipperConfig());
+            new Swiper('.swiper-customer .swiper-2', this.getCustomerSwipperConfig(3,3));
         },
         initJourney(){
             this.slider_journey.total = (document.querySelectorAll("#slider-journey .slider-content")?.length || 0);
-        },
-        initTestimonialSlider(){
-            this.slider_testimonial.total = (document.querySelectorAll("#slider-testimonial .slider-content")?.length || 0);
         },
         getMenuTobarBoxVisible(value) {
             return this.topbar.mobile_box_visible == value ? 'visible' : 'hidden';
         },
         selectTopBarnnerTab(value) {
             this.topbar.mobile_box_visible = value;
-        },
-        setTestimonialSliderPos(value) {
-            this.slider_testimonial.pos = value;
         },
         setMentalliderPos(value) {
             this.slider_mental.pos = value;
@@ -81,16 +70,6 @@ window.corporateAPP = createApp("#operator", {
         },
         setJourneySliderPos(value) {
             this.slider_journey.pos = value;
-        },
-        setTestimonialSliderNext() {
-            if(this.slider_testimonial.pos < this.slider_testimonial.total -1) {
-                this.slider_testimonial.pos++;
-            }
-        },
-        setTestimonialSliderPrev() {
-            if(this.slider_testimonial.pos > 0) {
-                this.slider_testimonial.pos--;
-            }
         },
         setJourneySliderNext() {
             if(this.slider_journey.pos < this.slider_journey.total -1) {
