@@ -367,6 +367,24 @@
             <img class="visible-desktop" src="<?php the_field("check_image"); ?>" alt="check">
             <img class="visible-mobile" src="<?php the_field("check_image_mobile"); ?>" alt="check">
         </section>
+        <section class="business">
+            <div class="left">
+                <img alt="business" src="<?php the_field('business_banner_image'); ?>">
+            </div>
+            <div class="right">
+                <h5>
+                    Para o seu negócio:<br>
+                    <b> Entregue o melhor cuidado de saúde:</b>
+                </h5>
+                <div class="list-items">
+                    <?php foreach (get_field("business_banner_items") as $row) : ?>
+                        <div class="item">
+                            <?php echo $row["item"]; ?>
+                        </div>
+                    <?php endforeach; ?>
+                    <a href="<?php the_field('know_more_url'); ?>" class="know-more" target="_blank">Saber mais</a>
+                </div>
+        </section>
         <section class="customers">
             <h5>Clientes</h5>
             <div class="swiper-customer">

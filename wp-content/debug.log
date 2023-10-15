@@ -175,3 +175,4 @@ Stack trace:
 [15-Oct-2023 02:19:49 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
 [15-Oct-2023 02:19:49 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
 [15-Oct-2023 02:19:49 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
+[15-Oct-2023 04:19:49 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/conexa/comporate.php on line 382
