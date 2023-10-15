@@ -11,6 +11,10 @@ window.corporateAPP = createApp("#corporate", {
             slider_journey : {
                 total : 0,
                 pos:0
+            },
+            slider_mental : {
+                total : 0,
+                pos:0
             }
         }
     },
@@ -18,6 +22,7 @@ window.corporateAPP = createApp("#corporate", {
         this.initTestimonialSlider()
         this.initJourney()
         this.initSwiperCustomers()
+        this.initSwiperMental()
     },
     methods : {
         getCustomerSwipperConfig(mobile=3, desktop=5) {
@@ -38,6 +43,9 @@ window.corporateAPP = createApp("#corporate", {
             }
             return config;
         },
+        initSwiperMental(){
+            this.slider_mental.total = (document.querySelectorAll("#slider-mental .slider-content")?.length || 0);
+        },
         initSwiperCustomers(){
             new Swiper('.swiper-customer .swiper-1', this.getCustomerSwipperConfig());
             new Swiper('.swiper-customer .swiper-2', this.getCustomerSwipperConfig());
@@ -56,6 +64,9 @@ window.corporateAPP = createApp("#corporate", {
         },
         setTestimonialSliderPos(value) {
             this.slider_testimonial.pos = value;
+        },
+        setMentalliderPos(value) {
+            this.slider_mental.pos = value;
         },
         setJourneySliderPos(value) {
             this.slider_journey.pos = value;
@@ -78,6 +89,16 @@ window.corporateAPP = createApp("#corporate", {
         setJourneySliderPrev() {
             if(this.slider_journey.pos > 0) {
                 this.slider_journey.pos--;
+            }
+        },
+        setMentalSliderPrev() {
+            if(this.slider_mental.pos > 0) {
+                this.slider_mental.pos--;
+            }
+        },
+        setMentalSliderNext() {
+            if(this.slider_mental.pos < this.slider_mental.total -1) {
+                this.slider_mental.pos++;
             }
         }
     }
