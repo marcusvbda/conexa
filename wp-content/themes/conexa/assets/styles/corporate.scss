@@ -649,7 +649,9 @@
         font-weight: 700;
         line-height: 138%; /* 70.38px */
         padding: 0 81px;
+        margin-bottom: 80px;
         @media screen and (max-width: $breakpoint) {
+          margin-bottom: 0;
           padding: 80px 30px;
         }
       }
