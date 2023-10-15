@@ -17,8 +17,31 @@ window.corporateAPP = createApp("#corporate", {
     mounted() {
         this.initTestimonialSlider()
         this.initJourney()
+        this.initSwiperCustomers()
     },
     methods : {
+        getCustomerSwipperConfig(mobile=3, desktop=5) {
+            const randongTime = Math.floor(Math.random() * (4000 - 2000 + 1)) + 2000;
+            const config = {
+                slidesPerView: mobile,
+                direction: 'horizontal',
+                loop: true,
+                autoplay: {
+                    delay: randongTime,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    950: {
+                      slidesPerView: desktop,
+                    },
+                }
+            }
+            return config;
+        },
+        initSwiperCustomers(){
+            new Swiper('.swiper-customer .swiper-1', this.getCustomerSwipperConfig());
+            new Swiper('.swiper-customer .swiper-2', this.getCustomerSwipperConfig());
+        },
         initJourney(){
             this.slider_journey.total = (document.querySelectorAll("#slider-journey .slider-content")?.length || 0);
         },

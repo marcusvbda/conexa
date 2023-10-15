@@ -166,3 +166,12 @@ Stack trace:
 [15-Oct-2023 02:07:28 UTC] PHP Warning:  Undefined array key "profession" in /var/www/html/wp-content/themes/conexa/comporate.php on line 286
 [15-Oct-2023 02:07:28 UTC] PHP Warning:  Undefined array key "company" in /var/www/html/wp-content/themes/conexa/comporate.php on line 289
 [15-Oct-2023 02:07:28 UTC] PHP Warning:  Undefined array key "content" in /var/www/html/wp-content/themes/conexa/comporate.php on line 293
+[15-Oct-2023 02:19:22 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
+[15-Oct-2023 02:19:22 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
+[15-Oct-2023 02:19:22 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
+[15-Oct-2023 02:19:27 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
+[15-Oct-2023 02:19:27 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
+[15-Oct-2023 02:19:27 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
+[15-Oct-2023 02:19:49 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
+[15-Oct-2023 02:19:49 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359
+[15-Oct-2023 02:19:49 UTC] PHP Warning:  Undefined array key "image" in /var/www/html/wp-content/themes/conexa/comporate.php on line 359

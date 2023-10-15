@@ -350,7 +350,48 @@
                 </div>
             </div>
         </section>
+        <section class="investors">
+            <h4>
+                Conheça os <b>fundos investidores</b> da Conexa
+            </h4>
+            <div class="investors-list">
+                <?php foreach (get_field('investors') as  $key => $value) : ?>
+                    <img src="<?php echo $value["image"]; ?>" alt="investidor">
+                <?php endforeach; ?>
+            </div>
+        </section>
+        <section class="check">
+            <h4>
+                Consultas online, onde sua equipe estiver
+            </h4>
+            <img class="visible-desktop" src="<?php the_field("check_image"); ?>" alt="check">
+            <img class="visible-mobile" src="<?php the_field("check_image_mobile"); ?>" alt="check">
+        </section>
+        <section class="customers">
+            <h5>Clientes</h5>
+            <div class="swiper-customer">
+                <div class="swiper swiper-1" scrollbar-hide="true">
+                    <div class="swiper-wrapper">
+                        <?php foreach (loopToArray('customers_slide_1', 'item') as $item) : ?>
+                            <div class="swiper-slide">
+                                <img src="<?php echo $item; ?>" />
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="swiper swiper-2" scrollbar-hide="true">
+                    <div class="swiper-wrapper">
+                        <?php foreach (loopToArray('customers_slide_2', 'item') as $item) : ?>
+                            <div class="swiper-slide">
+                                <img src="<?php echo $item; ?>" />
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src='<?php themePath('/assets/js/vue3.min.js'); ?>'></script>
     <script src='<?php themePath('/assets/js/navbar-menu.js'); ?>'></script>
     <script src='<?php themePath('/assets/js/corporate.js'); ?>'></script>
