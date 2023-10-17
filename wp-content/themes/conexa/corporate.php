@@ -194,7 +194,7 @@
                                 <?php echo $value["content"]; ?>
                             </div>
                         </div>
-                    <? endforeach; ?>
+                    <?php endforeach; ?>
                     <div class="slider-btns">
                         <div v-for="i in slider_testimonial.total" :key="i" :class="`slider-dot ${slider_testimonial.pos == i-1 && 'active'}`" @click="setTestimonialSliderPos(i-1)"></div>
                         <div class="slider-arrows">
@@ -331,7 +331,7 @@
                                 <span><?php echo $value["text"]; ?></span>
                             </div>
                         </div>
-                    <? endforeach; ?>
+                    <?php endforeach; ?>
                     <div class="slider-btns">
                         <div v-for="i in slider_journey.total" :key="i" :class="`slider-dot ${slider_journey.pos == i-1 && 'active'}`" @click="setJourneySliderPos(i-1)"></div>
                         <div class="slider-arrows">
@@ -494,7 +494,7 @@
                             </div>
                         </div>
                     </div>
-                <? endforeach; ?>
+                <?php endforeach; ?>
                 <div class="slider-btns">
                     <div v-for="i in slider_news.total" :key="i" :class="`slider-dot ${slider_news.pos == i-1 && 'active secondary'}`" @click="setNewsSliderPos(i-1)"></div>
                     <div class="slider-arrows">

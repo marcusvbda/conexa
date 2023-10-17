@@ -169,7 +169,7 @@
                                 <span><?php echo $value["text"]; ?></span>
                             </div>
                         </div>
-                    <? endforeach; ?>
+                    <?php endforeach; ?>
                     <div class="slider-btns">
                         <div v-for="i in slider_journey.total" :key="i" :class="`slider-dot ${slider_journey.pos == i-1 && 'active'}`" @click="setJourneySliderPos(i-1)"></div>
                         <div class="slider-arrows">
@@ -269,7 +269,7 @@
                         quando você mais precisar</h5>
 
                     <div class="list-items">
-                        <template v-if="slider_mental.pos !== 0">
+                        <template v-if="slider_mental.pos !== 1">
                             <h6>Obtenha :</h6>
                             <div class="item">Laudo</div>
                             <div class="item">Receita</div>
@@ -333,7 +333,7 @@
                             </div>
                         </div>
                     </div>
-                <? endforeach; ?>
+                <?php endforeach; ?>
                 <div class="slider-btns">
                     <div v-for="i in slider_news.total" :key="i" :class="`slider-dot ${slider_news.pos == i-1 && 'active secondary'}`" @click="setNewsSliderPos(i-1)"></div>
                     <div class="slider-arrows">
