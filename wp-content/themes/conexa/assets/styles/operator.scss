@@ -1383,6 +1383,7 @@
       flex: 1;
       @media screen and (max-width: $breakpoint) {
         order: 1;
+        margin-top: 60px;
       }
 
       .slider-content {
@@ -1390,6 +1391,10 @@
         @media screen and (max-width: $breakpoint) {
           width: 70%;
           align-self: center;
+
+          img {
+            width: 100%;
+          }
         }
       }
     }
@@ -1479,6 +1484,9 @@
 
         .item + .item {
           margin-top: 40px;
+          @media screen and (max-width: $breakpoint) {
+            margin-top: 0;
+          }
         }
       }
     }

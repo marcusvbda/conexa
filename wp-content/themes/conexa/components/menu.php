@@ -2,7 +2,7 @@
     <!-- navbar desktop -->
     <nav class="navbar">
         <a href="/">
-            <img class="logo" src="<?php themePath('/assets/images/logo.png'); ?>" />
+            <img class="logo" src="<?php themePath('/assets/images/logo.svg'); ?>" />
         </a>
         <ul class="hide-mobile">
             <li>

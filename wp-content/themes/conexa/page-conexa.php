@@ -27,7 +27,8 @@
                     <div class="initial-banner-content-text">
                         <div class="w-100 md-w-40 container">
                             <div class="initial-banner-content-logo-full">
-                                <img src="<?php themePath('/assets/images/logo-full.webp'); ?>" />
+                                <img src="<?php themePath('/assets/images/logo-pme.svg'); ?>" />
+                                <img src="<?php themePath('/assets/images/logo-viva.svg'); ?>" />
                             </div>
                             <h1>
                                 <?php the_field('section_1_title'); ?>
