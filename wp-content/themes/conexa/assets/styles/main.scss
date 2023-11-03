@@ -23,6 +23,10 @@ html {
 body {
   margin: 0;
   background-color: var(--gray-100);
+
+  &:has(.lead-dialog) {
+    overflow: hidden;
+  }
 }
 
 .navbar {
@@ -1263,4 +1267,53 @@ span {
 
 hr {
   display: none !important;
+}
+
+.lead-dialog {
+  position: fixed;
+  z-index: 5;
+  background-color: #0000006b;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .dialog-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    width: 40%;
+    position: relative;
+
+    .close-btn {
+      font-family: "Nexa";
+      text-decoration: none;
+      color: black;
+      position: absolute;
+      top: 13px;
+      right: 15px;
+      font-size: 25px;
+    }
+
+    @media (max-width: $breakpoint) {
+      width: 90%;
+      position: relative;
+      border-radius: 0;
+    }
+    h3 {
+      margin: 0 0 20px;
+      font-size: 26px;
+      font-family: $nexa;
+    }
+
+    .field-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      input {
+        padding: 8px 15px;
+      }
+    }
+  }
 }

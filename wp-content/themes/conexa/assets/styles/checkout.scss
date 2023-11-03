@@ -6,7 +6,7 @@ $gray-300: #787878;
 $text-color: #0a0a32;
 
 .montserrat {
-  font-family: $montserrat;
+  font-family: $segoe;
 }
 
 #footer {
@@ -95,7 +95,7 @@ hr {
 
   label {
     color: $text-color;
-    font-family: $montserrat;
+    font-family: $segoe;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -153,7 +153,7 @@ hr {
   background-color: $blue;
   color: #fff;
   text-align: center;
-  font-family: $montserrat;
+  font-family: $segoe;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

@@ -272,3 +272,98 @@ Stack trace:
 [15-Oct-2023 18:14:57 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/conexa/operator.php on line 302
 [15-Oct-2023 18:14:57 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/conexa/operator.php on line 302
 [15-Oct-2023 18:14:57 UTC] PHP Warning:  Array to string conversion in /var/www/html/wp-content/themes/conexa/operator.php on line 302
+[03-Nov-2023 11:49:10 UTC] PHP Deprecated:  preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in /var/www/html/wp-includes/formatting.php on line 1604
+[03-Nov-2023 11:49:10 UTC] PHP Deprecated:  strip_tags(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/wp-includes/formatting.php on line 2270
+[03-Nov-2023 11:49:35 UTC] PHP Deprecated:  preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in /var/www/html/wp-includes/formatting.php on line 1604
+[03-Nov-2023 11:49:35 UTC] PHP Deprecated:  strip_tags(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/wp-includes/formatting.php on line 2270
+[03-Nov-2023 11:52:01 UTC] PHP Deprecated:  preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in /var/www/html/wp-includes/formatting.php on line 1604
+[03-Nov-2023 11:52:01 UTC] PHP Deprecated:  strip_tags(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/wp-includes/formatting.php on line 2270
+[03-Nov-2023 12:05:49 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "ß" in /var/www/html/wp-content/themes/conexa/functions.php:184
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(310): lc_register_lead_post_type('')
+#1 /var/www/html/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-settings.php(632): do_action('init')
+#4 /var/www/html/wp-config.php(98): require_once('/var/www/html/w...')
+#5 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#6 /var/www/html/wp-admin/admin.php(34): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-admin/post-new.php(10): require_once('/var/www/html/w...')
+#8 {main}
+  thrown in /var/www/html/wp-content/themes/conexa/functions.php on line 184
+[03-Nov-2023 12:05:49 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-includes/class-wp-recovery-mode-email-service.php on line 367
+[03-Nov-2023 12:05:49 UTC] PHP Warning:  Trying to access array offset on value of type bool in /var/www/html/wp-includes/class-wp-recovery-mode-email-service.php on line 368
+[03-Nov-2023 12:05:49 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "ß" in /var/www/html/wp-content/themes/conexa/functions.php:184
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(310): lc_register_lead_post_type('')
+#1 /var/www/html/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-settings.php(632): do_action('init')
+#4 /var/www/html/wp-config.php(98): require_once('/var/www/html/w...')
+#5 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#6 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#7 /var/www/html/index.php(17): require('/var/www/html/w...')
+#8 {main}
+  thrown in /var/www/html/wp-content/themes/conexa/functions.php on line 184
+[03-Nov-2023 13:21:43 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/plugins/cf7-redirects/library/class-admin.php:151) in /var/www/html/wp-includes/pluggable.php on line 1435
+[03-Nov-2023 13:21:43 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/plugins/cf7-redirects/library/class-admin.php:151) in /var/www/html/wp-includes/pluggable.php on line 1438
+[03-Nov-2023 13:21:52 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/plugins/cf7-redirects/library/class-admin.php:151) in /var/www/html/wp-includes/pluggable.php on line 1435
+[03-Nov-2023 13:21:52 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/plugins/cf7-redirects/library/class-admin.php:151) in /var/www/html/wp-includes/pluggable.php on line 1438
+[03-Nov-2023 13:23:13 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/plugins/cf7-redirects/library/class-admin.php:151) in /var/www/html/wp-includes/pluggable.php on line 1435
+[03-Nov-2023 13:23:13 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/plugins/cf7-redirects/library/class-admin.php:151) in /var/www/html/wp-includes/pluggable.php on line 1438
+[03-Nov-2023 13:23:16 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/plugins/cf7-redirects/library/class-admin.php:151) in /var/www/html/wp-includes/pluggable.php on line 1435
+[03-Nov-2023 13:23:16 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-content/plugins/cf7-redirects/library/class-admin.php:151) in /var/www/html/wp-includes/pluggable.php on line 1438
+[03-Nov-2023 13:45:23 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 165
+[03-Nov-2023 13:45:23 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:45:23 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:46:25 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 165
+[03-Nov-2023 13:46:25 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:46:25 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:46:25 UTC] PHP Warning:  fopen(http://localhost:8080/wp-content/themes/conexa/leads.csv): Failed to open stream: HTTP wrapper does not support writeable connections in /var/www/html/wp-content/themes/conexa/functions.php on line 151
+[03-Nov-2023 13:46:25 UTC] PHP Fatal error:  Uncaught TypeError: fputcsv(): Argument #1 ($stream) must be of type resource, bool given in /var/www/html/wp-content/themes/conexa/functions.php:152
+Stack trace:
+#0 /var/www/html/wp-content/themes/conexa/functions.php(152): fputcsv(false, Array)
+#1 /var/www/html/wp-content/themes/conexa/functions.php(165): addRowCsv(false, Array)
+#2 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1188): register_leads(Object(WP_REST_Request))
+#3 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(1035): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/api/register_l...', Array, NULL)
+#4 /var/www/html/wp-includes/rest-api/class-wp-rest-server.php(447): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#5 /var/www/html/wp-includes/rest-api.php(418): WP_REST_Server->serve_request('/api/register_l...')
+#6 /var/www/html/wp-includes/class-wp-hook.php(310): rest_api_loaded(Object(WP))
+#7 /var/www/html/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters('', Array)
+#8 /var/www/html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#9 /var/www/html/wp-includes/class-wp.php(398): do_action_ref_array('parse_request', Array)
+#10 /var/www/html/wp-includes/class-wp.php(779): WP->parse_request('')
+#11 /var/www/html/wp-includes/functions.php(1335): WP->main('')
+#12 /var/www/html/wp-blog-header.php(16): wp()
+#13 /var/www/html/index.php(17): require('/var/www/html/w...')
+#14 {main}
+  thrown in /var/www/html/wp-content/themes/conexa/functions.php on line 152
+[03-Nov-2023 13:47:37 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 165
+[03-Nov-2023 13:47:37 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:47:37 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:47:47 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 165
+[03-Nov-2023 13:47:47 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:47:47 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:47:58 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 165
+[03-Nov-2023 13:47:58 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:47:58 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:48:44 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 164
+[03-Nov-2023 13:48:44 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:48:44 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:49:50 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 164
+[03-Nov-2023 13:49:50 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:49:50 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:49:57 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 164
+[03-Nov-2023 13:49:57 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:49:57 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:51:00 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 164
+[03-Nov-2023 13:51:00 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:51:00 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:51:43 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 166
+[03-Nov-2023 13:51:43 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:51:43 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:52:06 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 166
+[03-Nov-2023 13:52:06 UTC] PHP Warning:  Undefined variable $arquivo in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:52:06 UTC] PHP Deprecated:  file_exists(): Passing null to parameter #1 ($filename) of type string is deprecated in /var/www/html/wp-content/themes/conexa/functions.php on line 149
+[03-Nov-2023 13:53:25 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 164
+[03-Nov-2023 13:53:49 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 164
+[03-Nov-2023 13:55:04 UTC] PHP Warning:  Undefined property: stdClass::$name in /var/www/html/wp-content/themes/conexa/functions.php on line 164

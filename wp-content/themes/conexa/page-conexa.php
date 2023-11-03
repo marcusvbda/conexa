@@ -19,8 +19,23 @@
 
 <body id="home">
     <?php get_header(); ?>
+    <script>
+        window.contract_url = '<?php the_field('contract_url'); ?>';
+    </script>
     <?php require_once('components/menu.php'); ?>
     <section id="content"><!-- section will be closed on footer -->
+        <div class="lead-dialog" v-if="leadDialogVisible">
+            <div class="dialog-card">
+                <a href="#" @click.prevent="leadDialogVisible = false" class="close-btn">X</a>
+                <h3>Preencha os dados</h3>
+                <form class="field-list" @submit.prevent="submitLead">
+                    <input type="text" placeholder="Nome" required v-model="lead.social_name" />
+                    <input type="text" placeholder="Whatsapp" required v-model="lead.whatsapp" @keyup="makeMask('lead.whatsapp','## ##### ####')" />
+                    <input type="email" placeholder="Email empresarial" required v-model="lead.email" />
+                    <button class="btn-primary" type="submit">Prosseguir</button>
+                </form>
+            </div>
+        </div>
         <section id="banner-1">
             <div class="initial-banner" style="--banner-1 : url('<?php the_field('section_1_banner'); ?>')">
                 <div class="initial-banner-content">
@@ -42,7 +57,7 @@
                                 </span>
                             </div>
                             <div class="initial-banner-btn-section">
-                                <button class="btn-primary hide-mobile" @click="goTo('<?php the_field('contract_url'); ?>')">Contratar</button>
+                                <button class="btn-primary hide-mobile" @click="leadDialogVisible = true">Contratar</button>
                                 <button class="btn-primary hide-desktop" @click="goTo('<?php the_field('know_more_url'); ?>')">Saber mais</button>
                             </div>
                         </div>

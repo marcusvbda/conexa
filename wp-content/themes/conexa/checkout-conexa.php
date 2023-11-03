@@ -86,6 +86,10 @@
                             <b class="text-content">Tipo de cobrança : <?php the_field('type'); ?></b>
                             <b class="text-content">{{formatedPrice}} - ({{paymentInfo.method}})</b>
                         </div>
+                        <div class="input-group">
+                            <label>Qtde de funcionários</label>
+                            <input v-model="paymentInfo.qty" :disabled="isSubmiting" type="number" step="1" />
+                        </div>
                         <button class="btn-submit" @click="submit" :disabled="isSubmiting">
                             {{isSubmiting ? 'Aguarde...' : 'Finalizar compra'}}
                         </button>

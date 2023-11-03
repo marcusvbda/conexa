@@ -58,6 +58,18 @@ function customize_acf_wysiwyg_toolbar($toolbars)
 }
 add_filter('acf/fields/wysiwyg/toolbars', 'customize_acf_wysiwyg_toolbar');
 
+
+function register_api_register_leads()
+{
+    register_rest_route('api', '/register_leads', array(
+        'methods' => 'POST',
+        'callback' => 'register_leads',
+        'permission_callback' => '__return_true',
+    ));
+}
+
+add_action('rest_api_init', 'register_api_register_leads');
+
 function register_api_subscription()
 {
     register_rest_route('api', '/subscription', array(
@@ -107,7 +119,17 @@ function make_pagarme_client()
 
 function make_subscription_payload($body)
 {
+    $increments = [];
+    if ($body->paymentInfo->qty > 1) {
+        $increments = [
+            'value' => ($body->paymentInfo->price * $body->paymentInfo->qty)  - $body->paymentInfo->price,
+            'cycles' => 1,
+            'increment_type' => 'flat',
+        ];
+    }
+
     return [
+        'increments' => $increments,
         'plan_id' => PLANS_IDS[$body->planId],
         'payment_method' => 'credit_card',
         'card_number' => str_replace(' ', '', $body->paymentInfo->creditcard->number),
@@ -120,6 +142,27 @@ function make_subscription_payload($body)
             'document_number' =>  str_replace(' ', '', $body->personalInfo->docNumber)
         ],
     ];
+}
+
+function addRowCsv($file, $data)
+{
+    if (!file_exists($file)) {
+        $cabecalho = array('Nome', 'Email', 'Whatsapp');
+        $file = fopen($file, 'w');
+        fputcsv($file, $cabecalho);
+    } else {
+        $file = fopen($file, 'a');
+    }
+    fputcsv($file, $data);
+    fclose($file);
+}
+
+
+function register_leads($request)
+{
+    $body = json_decode($request->get_body());
+    addRowCsv("wp-content/themes/conexa/leads.csv", [$body->name, $body->email, $body->whatsapp]);
+    return $body;
 }
 
 function api_subscription($request)
